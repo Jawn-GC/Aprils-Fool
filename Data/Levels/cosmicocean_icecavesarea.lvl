@@ -1,0 +1,395 @@
+\-back_room_chance                       0          // % chance of a second room (default = 5%)
+\-back_room_interconnection_chance       0          // % chance of a second room interconnection (default = 20%)
+\-back_room_hidden_door_chance           0          // 1/N chance of a hidden door (default = 500)
+\-back_room_hidden_door_cache_chance     0          // 1/N chance of a hidden door to a cache (default = 1000)
+\-mount_chance                           0          // 1/N chance of a mount (default = 5000)
+\-altar_room_chance                      0          // 1/N chance of an altar room (default = 14)
+\-idol_room_chance                       0          // 1/N chance of an idol room (default = 10)
+\-floor_side_spread_chance               10         // 1/N chance of a spreadable floor spreading to its side (default = 10)
+\-floor_bottom_spread_chance             5          // 1/N chance of a spreadable floor spreading to its bottom (default = 5)
+
+\?locked_door                      /
+\?stone_floor                      +
+\?haunted_corpse                   7
+\?bone_block                       f
+\?shop_wall%50                     ;
+\?shop_woodwall                    :
+\?die                              %
+\?merchant                         #
+\?cavemanshopkeeper                &
+\?sleeping_hiredhand               \
+\?forcefield                       (
+\?chunk_air                        6
+\?empty                            0
+\?floor                            1
+\?floor%50                         2
+\?minewood_floor                   =
+\?floor_hard                       X
+\?floor_hard%50%floor              Y
+\?icefloor                         c
+\?icefloor%50                      y
+\?adjacent_floor                   Z
+\?ladder                           L
+\?ladder_plat                      P
+\?door                             9
+\?door2                            D
+\?door2_secret                     d
+\?spikes                           ^
+\?upsidedown_spikes                v
+\?push_block                       4
+\?falling_platform                 F
+\?thinice                          T
+\?spring_trap                      >
+\?timed_forcefield                 )
+\?forcefield_top                   '
+\?treasure                         t
+\?litwalltorch                     O
+\?cookfire                         r
+\?cursed_pot                       u
+\?alien                            J
+\?altar                            x
+\?idol                             I
+\?idol_floor                       i
+\?vault_wall                       |
+\?coffin                           g
+\?shop_sign                        K
+\?shop_door                        k
+\?lamp_hang                        l
+\?shop_wall                        .
+\?shop_item                        S
+\?wanted_poster                    W
+\?shopkeeper                       $
+\?storage_guy                      G
+\?storage_floor                    q
+\?autowalltorch                    M
+\?clover                           Q
+\?mothership_floor                 m
+\?plasma_cannon                    p
+\?alienqueen                       a
+\?shopkeeper_vat                   V
+\?alien_generator                  A
+\?eggplant_altar                   h
+\?moai_statue                      s
+\?eggplant_child                   b
+
+
+\+ufo                   30
+\+landmine              15
+\+springtrap            15
+\+yeti                  15
+\+critterpenguin        40
+\+critterfirefly        60
+
+////////////////////////////////////////////////////////////////////////////////
+\.entrance
+////////////////////////////////////////////////////////////////////////////////
+
+// room
+\!ignore
+1111111111
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+1111111111
+
+// room
+\!flip
+1111111111
+0000021112
+0000000000
+0000000000
+0009000000
+0111111000
+0222222000
+0000000000
+
+// room
+\!flip
+0000000000
+0000000000
+0000000000
+0090000000
+0111000000
+0212000111
+0212000111
+0020000211
+
+////////////////////////////////////////////////////////////////////////////////
+\.exit
+////////////////////////////////////////////////////////////////////////////////
+
+// room
+\!flip
+0000000000
+0000000000
+0000000000
+0009000000
+0211112000
+0021120000
+0002200000
+0000000000
+
+// room
+\!flip
+0000000000
+0000000000
+0000000000
+0090000000
+0111000000
+0212000011
+0212000111
+0020000211
+
+////////////////////////////////////////////////////////////////////////////////
+\.side
+////////////////////////////////////////////////////////////////////////////////
+
+// room
+\!ignore
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+
+// room
+0000000000
+cTTTTTTTTc
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+
+// room
+\!flip
+1111100001
+1111110001
+cccc0000cc
+cccc0000cc
+0000001111
+cccc00cc11
+vvvv000ccc
+000000cc11
+
+// room
+\!flip
+0000000011
+1111000ccc
+2211100000
+111vv00000
+00000000c0
+1100000000
+vv0000c000
+0000000000
+
+// room
+\!flip
+cc00000000
+1100cc0000
+v1001c00cc
+02002100cc
+
+// room
+0122112211
+0111111100
+0v11vvvv00
+0000000000
+
+// room
+\!flip
+1110000000
+1110000000
+0000000000
+00cccc0000
+001c120000
+11111000c0
+11112000c1
+1200000cc1
+
+// room
+\!flip
+0000000000
+0000yccccc
+000021ccc1
+00100vvvvv
+0000000000
+60000F00F0
+0000000000
+0000000000
+
+// room
+\!flip
+0000000011
+0000022221
+0000211111
+00000vvvvv
+0F00000000
+0000000000
+000ycccccc
+0000y1c111
+
+// room
+\!flip
+0200111000
+0000000000
+000c11111c
+000yc111cy
+00000y1y00
+0000000000
+1100001100
+1110001110
+
+// room
+\!flip
+0000000000
+0000000000
+011cTTTcc0
+021c000000
+002c000220
+000000c111
+000000c112
+ccc000c200
+
+// room
+\!flip
+0000000000
+0000000000
+yc11120000
+0y11200000
+0022000yc0
+000002cccc
+0000021111
+0000002200
+
+// room
+\!flip
+0000000000
+yccy000000
+0110000F00
+0000000000
+0000yyc000
+000011c000
+cc2211c0c1
+112211c0c1
+
+// new room
+\!flip
+2111221122
+0222002200
+0000000000
+0000000000
+00cTTTcc00
+000000yy00
+000000yy00
+2122000000
+
+// room
+\!flip
+1c00002222
+1c00000000
+0cTTc00000
+0000000000
+0000000000
+00000cTTcc
+01100000c1
+2112000001
+
+// room
+\!flip
+0000000y11
+0000000y11
+0yccy00000
+00cc000000
+000y00cc00
+00000yccy0
+11y000yy00
+11y0000000
+
+////////////////////////////////////////////////////////////////////////////////
+\.coffin_player   // Coffin room holding a dead player (both sides must be open)
+////////////////////////////////////////////////////////////////////////////////
+
+// room
+=11=======
+00000000L=
+0000g000L=
+000=====P=
+00000000L0
+0P000000L0
+1L=0000111
+1111111111
+
+////////////////////////////////////////////////////////////////////////////////
+\.coffin_player_vertical   // Coffin room holding a dead player (opened on all sides)
+////////////////////////////////////////////////////////////////////////////////
+
+// room
+====00=11=
+=L00000000
+=L00g00000
+=P=====000
+0L00000000
+0L000000P0
+1110000=L1
+1111001111
+
+////////////////////////////////////////////////////////////////////////////////
+\.chunk_air
+////////////////////////////////////////////////////////////////////////////////
+
+// room
+00000
+00000
+00000
+
+// room
+\!flip
+ccccc
+cc000
+00000
+
+// room
+\!flip
+11100
+22200
+00000
+
+// room
+\!flip
+000r0
+00111
+00100
+
+// room
+00010
+100v0
+v0000
+
+// room
+00cc0
+00cc0
+00000
+
+// room
+\!flip
+22200
+11100
+22200
+
+// room
+02220
+01110
+02220
+
+// room
+12121
+10101
+20202

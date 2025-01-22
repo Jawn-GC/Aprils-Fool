@@ -1,0 +1,647 @@
+
+\?stone_floor                      -
+\?locked_door                      /
+\?tomb_floor                       G
+\?cursed_pot                       u
+\?litwalltorch                     O
+\?haunted_corpse                   7
+\?bone_block                       f
+\?die                              %
+\?cavemanshopkeeper                &
+\?sleeping_hiredhand               \
+\?thief                            J
+\?chunk_ground                     5
+\?chunk_air                        6
+\?chunk_door                       8
+\?minewood_floor                   =
+\?vine                             v
+\?growable_vine                    V
+\?door                             9
+\?spikes                           ^
+\?bush_block                       b
+\?thorn_vine                       *
+\?jungle_spear_trap                ~
+\?tree_base                        T
+\?cookfire                         r
+\?key                              s
+\?sister                           i
+\?altar                            x
+\?idol                             I
+\?vault_wall                       |
+\?coffin                           g
+\?shop_item                        S
+\?shopkeeper                       $
+\?empty                            0
+\?floor                            1
+\?floor%50                         2
+\?floor_hard                       X
+\?floor_hard%50%floor              Y
+\?adjacent_floor                   Z
+\?ladder                           L
+\?ladder_plat                      P
+\?door2                            D
+\?push_block                       4
+\?treasure                         t
+\?scorpion                         q
+\?crate                            R
+\?arrow_trap                       B
+\?clover                           Q
+\?mattock                          M
+\?houyibow                         h
+\?shop_sign                        K
+\?shop_door                        k
+\?lamp_hang                        l
+\?shop_wall                        .
+\?shop_wall%50                     ;
+\?shop_woodwall                    :
+\?wanted_poster                    W
+\?merchant                         #
+\?forcefield                       ?
+\?challenge_waitroom               !
+\?forcefield_top                   '
+\?crate_ropes                      {
+\?crate_bombs                      }
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+\.challenge_entrance   // Dual entrance to the challenge rooms facing right, flipped for other side
+////////////////////////////////////////////////////////////////////////////////
+
+// room
+\!dual
+1111111111 ....'...'.
+1111111111 000000l000
+11.......K 0000000000
+1..0l00... 0000000000
+1.DL00W0.0 00D000Q00L
+1..P0000:0 ::::?:1:!P
+11.L0#00k0 :::::::::L
+11:::::::: L00000000L
+
+////////////////////////////////////////////////////////////////////////////////
+\.challenge_bottom   // Room appearing right below challenge entrance
+////////////////////////////////////////////////////////////////////////////////
+
+// room
+\!flip
+L00000000L
+L0O0000O0L
+P========P
+L00000000L
+L{M}O0000L
+=4=4=0000L
+==========
+ffffffffff
+
+////////////////////////////////////////////////////////////////////////////////
+\.challenge_0-0
+////////////////////////////////////////////////////////////////////////////////
+
+// room
+\!flip
+ffffffffff
+ffffffffff
+ffffff+4+f
+ffffffffff
+ffffffffff
+f+4+ffffff
+ffffffffff
+ffffffffff
+
+// room
+\!flip
+ffffffffff
+f---4fffff
+f-t-ffffff
+f---ffffff
+ffffffffff
+ffffffffff
+ffffffffff
+ffffffffff
+
+// room
+\!flip
+ffffffffff
+ffffffffff
+ffffffffff
+ffffff---4
+ffffff-t-f
+ffffff---f
+ffffffffff
+ffffffffff
+
+// room
+\!flip
+ffffffffff
+ffffff4fff
+f-------ff
+f-t0000-ff
+f----0t-ff
+ffff----ff
+ffffffffff
+ffffffffff
+
+// room
+\!flip
+ffffffffff
+ffffffffff
+fff4-----f
+fff--000-f
+fff-00O0-f
+fff------f
+ffffffffff
+ffffffffff
+
+// new room
+\!flip
+ffffffffff
+f4+++++++f
+ff+L00q0+f
+ff+P+++++f
+ff+L+fffff
+ff+L+fffff
+ff+++fffff
+ffffffffff
+
+////////////////////////////////////////////////////////////////////////////////
+\.challenge_0-1
+////////////////////////////////////////////////////////////////////////////////
+
+// room
+\!flip
+ffffffffff
+ffffffffff
+ffffff+4+f
+ffffffffff
+ffffffffff
+f+4+ffffff
+ffffffffff
+ffffffffff
+
+// room
+\!flip
+ffffffffff
+f---4fffff
+f-t-ffffff
+f---ffffff
+ffffffffff
+ffffffffff
+ffffffffff
+ffffffffff
+
+// room
+\!flip
+ffffffffff
+ffffffffff
+ffffffffff
+ffffff---4
+ffffff-t-f
+ffffff---f
+ffffffffff
+ffffffffff
+
+// room
+\!flip
+ffffffffff
+ffffff4fff
+f-------ff
+f-t0000-ff
+f----0t-ff
+ffff----ff
+ffffffffff
+ffffffffff
+
+// room
+\!flip
+ffffffffff
+ffffffffff
+fff4-----f
+fff--000-f
+fff-00O0-f
+fff------f
+ffffffffff
+ffffffffff
+
+// new room
+\!flip
+ffffffffff
+f4+++++++f
+ff+L00q0+f
+ff+P+++++f
+ff+L+fffff
+ff+L+fffff
+ff+++fffff
+ffffffffff
+
+////////////////////////////////////////////////////////////////////////////////
+\.challenge_0-2
+////////////////////////////////////////////////////////////////////////////////
+
+// room
+\!flip
+ffffffffff
+ffffffffff
+ffffff+4+f
+ffffffffff
+ffffffffff
+f+4+ffffff
+ffffffffff
+ffffffffff
+
+// room
+\!flip
+ffffffffff
+f---4fffff
+f-t-ffffff
+f---ffffff
+ffffffffff
+ffffffffff
+ffffffffff
+ffffffffff
+
+// room
+\!flip
+ffffffffff
+ffffffffff
+ffffffffff
+ffffff---4
+ffffff-t-f
+ffffff---f
+ffffffffff
+ffffffffff
+
+// room
+\!flip
+ffffffffff
+ffffff4fff
+f-------ff
+f-t0000-ff
+f----0t-ff
+ffff----ff
+ffffffffff
+ffffffffff
+
+// room
+\!flip
+ffffffffff
+ffffffffff
+fff4-----f
+fff--000-f
+fff-00O0-f
+fff------f
+ffffffffff
+ffffffffff
+
+// new room
+\!flip
+ffffffffff
+f4+++++++f
+ff+L00q0+f
+ff+P+++++f
+ff+L+fffff
+ff+L+fffff
+ff+++fffff
+ffffffffff
+
+////////////////////////////////////////////////////////////////////////////////
+\.challenge_0-3
+////////////////////////////////////////////////////////////////////////////////
+
+// room
+ffffffffff
+ffffffffff
+ffffff+4+f
+ffffffffff
+ffffffffff
+f+4+ffffff
+ffffffffff
+ffffffffff
+
+// room
+\!flip
+ffffffffff
+f---4fffff
+f-t-ffffff
+f---ffffff
+ffffffffff
+ffffffffff
+ffffffffff
+ffffffffff
+
+// room
+\!flip
+ffffffffff
+ffffffffff
+ffffffffff
+ffffff---4
+ffffff-t-f
+ffffff---f
+ffffffffff
+ffffffffff
+
+// room
+\!flip
+ffffffffff
+ffffff4fff
+f-------ff
+f-t0000-ff
+f----0t-ff
+ffff----ff
+ffffffffff
+ffffffffff
+
+// room
+\!flip
+ffffffffff
+ffffffffff
+fff4-----f
+fff--000-f
+fff-00O0-f
+fff------f
+ffffffffff
+ffffffffff
+
+// new room
+\!flip
+ffffffffff
+f4+++++++f
+ff+L00q0+f
+ff+P+++++f
+ff+L+fffff
+ff+L+fffff
+ff+++fffff
+ffffffffff
+
+////////////////////////////////////////////////////////////////////////////////
+\.challenge_1-0
+////////////////////////////////////////////////////////////////////////////////
+
+// room
+\!flip
+ffffffffff
+f---4fffff
+f-t-ffffff
+f---ffffff
+ffffffffff
+ffffffffff
+XXXXXXXXXX
+XXXXXXXXXX
+
+// room
+\!flip
+ffffffffff
+ffffffffff
+ffffffffff
+ffffff---4
+ffffff-t-f
+ffffff---f
+XXXXXXXXXX
+XXXXXXXXXX
+
+// room
+\!flip
+ffffffffff
+ffffff4fff
+f-------ff
+f-t0000-ff
+f----0t-ff
+ffff----ff
+XXXXXXXXXX
+XXXXXXXXXX
+
+// room
+\!flip
+ffffffffff
+ffffffffff
+fff4-----f
+fff--000-f
+fff-00O0-f
+fff------f
+XXXXXXXXXX
+XXXXXXXXXX
+
+// new room
+\!flip
+ffffff+++f
+ffffff+L+f
+fff4ff+P+f
+f++++++L+f
+f+00q00L+f
+f++++++++f
+XXXXXXXXXX
+XXXXXXXXXX
+
+////////////////////////////////////////////////////////////////////////////////
+\.challenge_1-1
+////////////////////////////////////////////////////////////////////////////////
+
+// room
+\!flip
+ffffffffff
+ff-------f
+ff-000004f
+ff-00----f
+ff-O00-fff
+ff-----fff
+XXXXXXXXXX
+XXXXXXXXXX
+
+// room
+\!flip
+ffffffffff
+ffffffffff
+ff------ff
+f4-0000-4f
+f-R000qf-f
+f-----ff-f
+XXXXXXXXXX
+XXXXXXXXXX
+
+// room
+\!flip
+ffffffffff
+f---4fffff
+f-t-ffffff
+f---ffffff
+ffffffffff
+ffffffffff
+XXXXXXXXXX
+XXXXXXXXXX
+
+// room
+\!flip
+ffffffffff
+ffffffffff
+ffffffffff
+ffffff---4
+ffffff-t-f
+ffffff---f
+XXXXXXXXXX
+XXXXXXXXXX
+
+// room
+\!flip
+ffffffffff
+ffffff4fff
+f-------ff
+f-t0000-ff
+f----0t-ff
+ffff----ff
+XXXXXXXXXX
+XXXXXXXXXX
+
+// room
+\!flip
+ffffffffff
+ffffffffff
+fff4-----f
+fff--000-f
+fff-00O0-f
+fff------f
+XXXXXXXXXX
+XXXXXXXXXX
+
+////////////////////////////////////////////////////////////////////////////////
+\.challenge_1-2
+////////////////////////////////////////////////////////////////////////////////
+
+// room
+\!flip
+ffffffffff
+ff-------f
+ff-000004f
+ff-00----f
+ff-O00-fff
+ff-----fff
+XXXXXXXXXX
+XXXXXXXXXX
+
+// room
+\!flip
+ffffffffff
+ffffffffff
+ff------ff
+f4-0000-4f
+f-R000qf-f
+f-----ff-f
+XXXXXXXXXX
+XXXXXXXXXX
+
+// room
+\!flip
+ffffffffff
+f---4fffff
+f-t-ffffff
+f---ffffff
+ffffffffff
+ffffffffff
+XXXXXXXXXX
+XXXXXXXXXX
+
+// room
+\!flip
+ffffffffff
+ffffffffff
+ffffffffff
+ffffff---4
+ffffff-t-f
+ffffff---f
+XXXXXXXXXX
+XXXXXXXXXX
+
+// room
+\!flip
+ffffffffff
+ffffff4fff
+f-------ff
+f-t0000-ff
+f----0t-ff
+ffff----ff
+XXXXXXXXXX
+XXXXXXXXXX
+
+// room
+\!flip
+ffffffffff
+ffffffffff
+fff4-----f
+fff--000-f
+fff-00O0-f
+fff------f
+XXXXXXXXXX
+XXXXXXXXXX
+
+////////////////////////////////////////////////////////////////////////////////
+\.challenge_1-3
+////////////////////////////////////////////////////////////////////////////////
+
+// room
+\!flip
+ffffffffff
+f---4fffff
+f-t-ffffff
+f---ffffff
+ffffffffff
+ffffffffff
+XXXXXXXXXX
+XXXXXXXXXX
+
+// room
+\!flip
+ffffffffff
+ffffffffff
+ffffffffff
+ffffff---4
+ffffff-t-f
+ffffff---f
+XXXXXXXXXX
+XXXXXXXXXX
+
+// room
+\!flip
+ffffffffff
+ffffff4fff
+f-------ff
+f-t0000-ff
+f----0t-ff
+ffff----ff
+XXXXXXXXXX
+XXXXXXXXXX
+
+// room
+\!flip
+ffffffffff
+ffffffffff
+fff4-----f
+fff--000-f
+fff-00O0-f
+fff------f
+XXXXXXXXXX
+XXXXXXXXXX
+
+// new room
+\!flip
+ffffff+++f
+ffffff+L+f
+fff4ff+P+f
+f++++++L+f
+f+00q00L+f
+f++++++++f
+XXXXXXXXXX
+XXXXXXXXXX
+
+////////////////////////////////////////////////////////////////////////////////
+\.challenge_special
+////////////////////////////////////////////////////////////////////////////////
+
+// room
+\!flip
+ffffffffff
+f4+-+++++f
+ff+00h00+f
+ff+0+4+0+f
+ff+O+++O+f
+ff+++++++f
+XXXXXXXXXX
+XXXXXXXXXX

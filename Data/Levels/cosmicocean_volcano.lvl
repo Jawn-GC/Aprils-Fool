@@ -1,0 +1,584 @@
+\-back_room_chance                       0          // % chance of a second room (default = 5%)
+\-back_room_interconnection_chance       0          // % chance of a second room interconnection (default = 20%)
+\-back_room_hidden_door_chance           0          // 1/N chance of a hidden door (default = 500)
+\-back_room_hidden_door_cache_chance     0          // 1/N chance of a hidden door to a cache (default = 1000)
+\-mount_chance                           300        // 1/N chance of a mount (default = 5000)
+\-altar_room_chance                      0          // 1/N chance of an altar room (default = 14)
+\-idol_room_chance                       0          // 1/N chance of an idol room (default = 10)
+\-floor_side_spread_chance               0          // 1/N chance of a spreadable floor spreading to its side (default = 10)
+\-floor_bottom_spread_chance             0          // 1/N chance of a spreadable floor spreading to its bottom (default = 5)
+\-max_liquid_particles                   2000       // Maximum number of liquid drops that can be created until no more liquid rooms are allowed
+\-flagged_liquid_rooms                   6          // Number of random rooms that will be flagged for being eligible to spawn liquid
+\-machine_bigroom_chance                 0          // 1/N chance of spawning a machine big room (default = 0)
+\-machine_wideroom_chance                0          // 1/N chance of spawning a machine wide room (default = 0)
+\-machine_tallroom_chance                0          // 1/N chance of spawning a machine tall room (default = 0)
+\-machine_rewardroom_chance              0          // 1/N chance of spawning a machine reward room (default = 0)
+
+\?stone_floor                      +
+\?tomb_floor                       G
+\?cursed_pot                       u
+\?litwalltorch                     O
+\?haunted_corpse                   7
+\?bone_block                       f
+\?shop_wall%50                     ;
+\?shop_woodwall                    :
+\?die                              %
+\?merchant                         #
+\?cavemanshopkeeper                &
+\?sleeping_hiredhand               \
+\?forcefield                       ?
+\?forcefield_top                   '
+\?thief                            J
+\?chunk_ground                     5
+\?chunk_air                        6
+\?chunk_door                       8
+\?empty                            0
+\?floor                            1
+\?floor%50                         2
+\?minewood_floor                   =
+\?floor_hard                       X
+\?floor_hard%50%floor              Y
+\?adjacent_floor                   Z
+\?ladder                           L
+\?ladder_plat                      P
+\?door                             9
+\?door2                            D
+\?locked_door                      /
+\?push_block                       4
+\?powder_keg                       o
+\?timed_powder_keg                 m
+\?falling_platform                 F
+\?chainandblocks_ceiling           C
+\?conveyorbelt_left                <
+\?conveyorbelt_right               >
+\?key                              y
+\?factory_generator                A
+\?treasure                         t
+\?altar                            x
+\?vault_wall                       |
+\?coffin                           g
+\?shop_sign                        K
+\?shop_door                        k
+\?lamp_hang                        l
+\?shop_wall                        .
+\?shop_item                        S
+\?wanted_poster                    W
+\?shopkeeper                       $
+\?lava                             w
+\?lava%50%floor                    a
+
+\%spike_ball_chance            20
+\%chain_blocks_chance          20
+\%pushblock_chance             50                           // Used both for powder kegs and push blocks
+
+\+bat                   60                           // 1/60 chance in each level, only appears on ceiling
+\+caveman               90                           // 1/120 chance in level 1, 1/110 in level 2, etc.
+\+robot                 50
+\+firebug               10                           // this chance is only used on each piece of chain
+\+imp                   60
+\+crittersnail          80
+
+////////////////////////////////////////////////////////////////////////////////
+\.entrance
+////////////////////////////////////////////////////////////////////////////////
+
+// room
+\!ignore
+1111111111
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+1111111111
+
+// room
+\!flip
+1111111112
+1111111112
+0000000000
+0008000000
+0000000000
+0000000000
+1011111111
+1011111111
+
+// room
+\!flip
+\!liquid
+1111111111
+0000000000
+0009000000
+0011120000
+0000000020
+1wwwwwww12
+1aawwwaa11
+1111111111
+
+////////////////////////////////////////////////////////////////////////////////
+\.exit
+////////////////////////////////////////////////////////////////////////////////
+
+// room
+1111111111
+0021111200
+0002222000
+0000000000
+0008000000
+F0F0000000
+0000000000
+0001111111
+
+////////////////////////////////////////////////////////////////////////////////
+\.side
+////////////////////////////////////////////////////////////////////////////////
+
+// room
+\!ignore
+1111111111
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+1111111111
+
+// room
+\!flip
+\!liquid
+0000000000
+00001www10
+00001www10
+00001awa10
+0000111C10
+6000000000
+0000000000
+0000000000
+
+// room
+\!flip
+0000000000
+0000000000
+000000>>>0
+0000000000
+0000060000
+00<<<00000
+0000000000
+0000000000
+
+// room
+\!flip
+\!liquid
+112221wa11
+001001ww10
+00C001ww11
+0000111ww1
+0000o01ww1
+00011011w1
+00011011w1
+1001201111
+
+// room
+\!flip
+11C0000000
+0000060000
+0000000000
+0000000000
+0000000000
+50000000F0
+0000000000
+0000000000
+
+// room
+\!flip
+1111221122
+01C1000000
+0000000000
+0000050000
+0000000000
+0000000000
+0000011111
+1201111200
+
+// room
+\!flip
+0000060000
+0000000000
+0000000000
+0000000000
+0000000000
+0000000000
+00F0000F00
+0000000000
+
+// room
+\!liquid
+\!flip
+2000000002
+2000000002
+0000000000
+000F00F000
+0000000000
+1wwwwwwww1
+1aawwwwaa1
+1111111111
+
+// room
+\!flip
+0000000000
+0001111000
+0001111000
+0011111100
+0000000000
+F211ww1110
+0011aa1110
+0001111111
+
+// room
+\!flip
+0011C11C11
+0000000000
+0000000000
+0000000011
+0000011022
+000F022000
+0F00000000
+0000000000
+
+// room
+\!flip
+1110021111
+0000001000
+000000001C
+000F000000
+0000000110
+220001a110
+111011a110
+1110111120
+
+// room
+\!liquid
+\!flip
+2000000002
+2000000002
+1wwww10001
+1wwww10000
+1wwww11101
+1wwwww1001
+1aaaaa1011
+1111111011
+
+// room
+\!flip
+\!liquid
+1111ww1001
+1w11111011
+1111000001
+0000000000
+0200000000
+11www11w11
+11ww111ww1
+1111111111
+
+// room
+\!flip
+0000000000
+11C0000000
+0000000000
+000000<<<0
+0000000210
+0000000000
+0000000<<<
+0>>>000021
+
+// room
+\!flip
+\!liquid
+00000C111C
+0000000000
+000000<000
+0000<01010
+00<0101010
+1000101w10
+1ww1101w10
+1111001110
+
+// room
+\!flip
+111100111C
+0000000000
+0110000010
+1111111F10
+5000000000
+0000000000
+0000000000
+1111221102
+
+// room
+\!flip
+\!liquid
+0000000000
+0000000000
+>>00000000
+100000<<<1
+0000000011
+1wwwwwww11
+1aawwwaa11
+1111111111
+
+// room
+\!flip
+0000001111
+0000011C11
+0000040000
+01aa111000
+0111111000
+1111222011
+1112000002
+1112000002
+
+// room
+\!flip
+1110000211
+0040000211
+0111aa1111
+0111111120
+022111C120
+0000000000
+0112000000
+1112000000
+
+// room
+\!flip
+0001111000
+0002111000
+0011111100
+0011100000
+0111101110
+0000001110
+0<<<<<1111
+0111111111
+
+// room
+\!flip
+\!liquid
+60000001C1
+0000000001
+0000000001
+0000000000
+0011ww1100
+1011C11100
+0000000100
+1112002111
+
+// new room
+\!flip
+1C10000111
+0000000000
+0000000000
+0000000110
+0001100110
+00011ww111
+00011aa111
+0001111111
+
+// new room
+\!flip
+1110000111
+0000000000
+0000000000
+00>>ww<<00
+0011ww1100
+1011111111
+0000002111
+1111001111
+
+// new room
+\!flip
+0000000C11
+0000110011
+0000110011
+001a1C0011
+0011100000
+1a11000002
+1111000000
+1112000111
+
+// new room
+\!flip
+1100000111
+1100000000
+11>>000000
+0000000000
+000000<<40
+0000001110
+11awwa1111
+1111111111
+
+// new room
+\!flip
+1000000011
+1000002111
+0002111111
+0000211111
+0000001120
+1120000000
+1111200000
+1111000011
+
+////////////////////////////////////////////////////////////////////////////////
+\.coffin_player   // Coffin room holding a dead player (both sides must be open)
+////////////////////////////////////////////////////////////////////////////////
+
+// room
+\!flip
+1C01111111
+0000001000
+0001000000
+0001g00000
+0001110000
+0002110100
+00002201F0
+0000000000
+
+////////////////////////////////////////////////////////////////////////////////
+\.coffin_player_vertical   // Coffin room holding a dead player (opened on all sides)
+////////////////////////////////////////////////////////////////////////////////
+
+// room
+\!flip
+1111001C01
+0000000000
+0002111000
+00000010F0
+0000g04000
+0F01111000
+0002220000
+0000000000
+
+////////////////////////////////////////////////////////////////////////////////
+\.chunk_door
+////////////////////////////////////////////////////////////////////////////////
+
+// room
+\!flip
+009000
+021120
+211112
+
+// room
+\!flip
+000000
+000020
+090212
+
+// room
+\!flip
+020000
+010900
+111112
+
+////////////////////////////////////////////////////////////////////////////////
+\.chunk_ground
+////////////////////////////////////////////////////////////////////////////////
+
+// room
+\!ignore
+00000
+00000
+00000
+
+// room
+\!liquid
+1www1
+1www1
+11111
+
+// room
+\!flip
+00000
+0>>>0
+11111
+
+// room
+\!flip
+01110
+00400
+11111
+
+// room
+\!flip
+1C110
+00000
+00000
+
+// room
+00000
+00000
+11111
+
+// new room
+01a10
+01a10
+11111
+
+////////////////////////////////////////////////////////////////////////////////
+\.chunk_air
+////////////////////////////////////////////////////////////////////////////////
+
+// room
+00000
+00000
+00000
+
+// room
+\!liquid
+1www1
+1www1
+11111
+
+// room
+\!flip
+1C100
+10100
+00000
+
+// room
+\!flip
+11100
+22200
+00000
+
+// room
+\!flip
+11100
+11100
+22200
+
+// room
+01110
+02220
+00000
+
+// room
+01110
+01110
+02220
+
+// room
+\!flip
+22200
+11100
+22200
+
+// room
+02220
+01110
+02220
+
+// room
+12121
+10101
+20202
