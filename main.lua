@@ -1,7 +1,7 @@
 meta = {
     name = "April's Fool",
 	description = "It's just a prank, bro.",
-    version = '1.6.1',
+    version = '1.7',
     author = 'JawnGC',
 }
 
@@ -9,6 +9,28 @@ local sound = require('play_sound')
 local blockchain_and_firebug = require("blockchain_and_firebug")
 
 activate_sparktraps_hack(true)
+
+local GAMBA_ITEMS = {
+	ENT_TYPE.ITEM_PICKUP_PARACHUTE, 
+	ENT_TYPE.ITEM_MACHETE, 
+	ENT_TYPE.ITEM_PICKUP_CLIMBINGGLOVES, 
+	ENT_TYPE.ITEM_PICKUP_SPRINGSHOES, 
+	ENT_TYPE.ITEM_PURCHASABLE_POWERPACK, 
+	ENT_TYPE.ITEM_PURCHASABLE_JETPACK, 
+	ENT_TYPE.ITEM_PURCHASABLE_TELEPORTER_BACKPACK, 
+	ENT_TYPE.ITEM_DIAMOND, 
+	ENT_TYPE.ITEM_METAL_SHIELD, 
+	ENT_TYPE.ITEM_WOODEN_SHIELD, 
+	ENT_TYPE.ITEM_KEY, 
+	ENT_TYPE.ITEM_PRESENT, 
+	ENT_TYPE.ITEM_BROKEN_MATTOCK, 
+	ENT_TYPE.ITEM_LANDMINE, 
+	ENT_TYPE.ITEM_PICKUP_ROYALJELLY, 
+	ENT_TYPE.ITEM_DIE, 
+	ENT_TYPE.ITEM_SHOTGUN, 
+	ENT_TYPE.ITEM_PURCHASABLE_HOVERPACK, 
+	ENT_TYPE.ITEM_TELEPORTER
+}
 
 --Drops/Spawns
 replace_drop(DROP.ROCKDOG_FIREBALL, ENT_TYPE.ITEM_AXOLOTL_BUBBLESHOT)
@@ -50,6 +72,39 @@ end, SPAWN_TYPE.ANY, 0, ENT_TYPE.ITEM_FLAMETHROWER_FIREBALL)
 set_post_entity_spawn(function (entity)
 	entity.color.a = 0.1
 end, SPAWN_TYPE.ANY, 0, ENT_TYPE.MONS_CAVEMAN_BOSS)
+
+--Big Bombs -> Burning Powerpacks
+set_post_entity_spawn(function (entity)
+	if entity.width > 1 then
+		set_timeout(function()
+			local bomb = get_entity(entity.uid)
+			if bomb ~= nil then
+				local owner = bomb.last_owner_uid
+				if #players > 0 and players[1].uid == owner then
+					local backitem_uid = players[1]:worn_backitem()
+					if get_entity_type(backitem_uid) == ENT_TYPE.ITEM_POWERPACK then
+						local x, y, l = get_position(entity.uid)
+						local vx, vy = get_velocity(entity.uid)
+						entity:destroy()
+						local pp = spawn(ENT_TYPE.ITEM_POWERPACK, x, y, l, vx, vy)
+						local pp_ent = get_entity(pp)
+						pp_ent.last_owner_uid = players[1].uid
+						pp_ent.owner_uid = players[1].uid
+						get_entity(pp):light_on_fire(45)
+						get_entity(pp).dont_damage_owner_timer = 10
+						set_timeout(function()
+							local live_pack = get_entity(pp)
+							if live_pack ~= nil then
+
+								live_pack:kill(false, nil) 
+							end
+                        end, 45)
+					end
+				end
+			end
+		end, 1)
+	end	
+end, SPAWN_TYPE.ANY, 0, ENT_TYPE.ITEM_BOMB)
 
 --Sonic Lizards
 --Drop "rings" when hit
@@ -99,7 +154,7 @@ end, SPAWN_TYPE.SYSTEMIC, 0, ENT_TYPE.MONS_REDSKELETON)
 
 --Worse Gambling Shop Prizes
 set_callback(function ()	
-	change_diceshop_prizes({ENT_TYPE.ITEM_PICKUP_PARACHUTE, ENT_TYPE.ITEM_MACHETE, ENT_TYPE.ITEM_PICKUP_CLIMBINGGLOVES, ENT_TYPE.ITEM_PICKUP_SPRINGSHOES, ENT_TYPE.ITEM_PURCHASABLE_POWERPACK, ENT_TYPE.ITEM_PURCHASABLE_JETPACK, ENT_TYPE.ITEM_PURCHASABLE_TELEPORTER_BACKPACK, ENT_TYPE.ITEM_DIAMOND, ENT_TYPE.ITEM_METAL_SHIELD, ENT_TYPE.ITEM_WOODEN_SHIELD, ENT_TYPE.ITEM_KEY, ENT_TYPE.ITEM_PRESENT, ENT_TYPE.ITEM_BROKEN_MATTOCK, ENT_TYPE.ITEM_LANDMINE, ENT_TYPE.ITEM_PICKUP_ROYALJELLY, ENT_TYPE.ITEM_DIE, ENT_TYPE.ITEM_SHOTGUN, ENT_TYPE.ITEM_PURCHASABLE_HOVERPACK, ENT_TYPE.ITEM_TELEPORTER})
+	change_diceshop_prizes(GAMBA_ITEMS)
 end, ON.POST_LEVEL_GENERATION)
 
 --Robots
@@ -111,12 +166,15 @@ set_post_entity_spawn(function(entity)
 end, SPAWN_TYPE.ANY, 0, ENT_TYPE.MONS_ROBOT)
 
 --Change Gravity of falling platforms
---Shaking is more intense for higher gravity magnitudes
+--Shaking is more intense for rising platforms
 local falling_platforms = {}
 set_post_entity_spawn(function(entity)
 	local num = math.random()
-    entity:set_gravity(0.15 * (5 - 10 * num))
-	entity.shaking_factor = math.abs(0.5 - num) * 0.2
+    local gravity = 0.15 * (5 - 10 * num)
+	entity:set_gravity(gravity)
+	if gravity < 0 then
+		entity.shaking_factor = math.abs(0.5) * 0.2
+	end
 	falling_platforms[#falling_platforms + 1] = entity.uid
 end, SPAWN_TYPE.ANY, 0, ENT_TYPE.ACTIVEFLOOR_FALLING_PLATFORM)
 
@@ -185,7 +243,7 @@ set_post_entity_spawn(function(entity)
 	end
 end, SPAWN_TYPE.ANY, 0, ENT_TYPE.MONS_FEMALE_JIANGSHI)
 
---Flying Fish
+--Flying Fish Torpedos
 local flying_fish = {}
 local fish_state = {}
 set_post_entity_spawn(function(entity)
@@ -264,10 +322,10 @@ end, SPAWN_TYPE.ANY, 0, ENT_TYPE.MONS_MONKEY)
 
 --Frogs are cursed
 set_post_entity_spawn(function(entity)
-	entity:set_cursed(true)
+	entity:set_cursed(true, false)
 end, SPAWN_TYPE.ANY, 0, ENT_TYPE.MONS_FROG)
 set_post_entity_spawn(function(entity)
-	entity:set_cursed(true)
+	entity:set_cursed(true, false)
 end, SPAWN_TYPE.ANY, 0, ENT_TYPE.MONS_FIREFROG)
 
 --Small Yeti King & Queen
@@ -565,22 +623,26 @@ set_callback(function ()
 			get_entity(green_teleporter):destroy()
 		end
 		if get_entity(red_teleporter) ~= nil and players[1].state ~= CHAR_STATE.ENTERING and players[1].state ~= CHAR_STATE.EXITING then
-			local px, py, pl = get_position(players[1].uid)
+			local px, py, pl
+			if players[1].overlay ~= nil and ((players[1].overlay.type.search_flags & MASK.MOUNT) ~= 0) then
+				px, py, pl = get_position(players[1].overlay.uid)
+			else
+				px, py, pl = get_position(players[1].uid)
+			end
+			
 			local tx, ty, tl = get_position(red_teleporter)
 			local dx = tx - px
 			local dy = ty - py
-			if dx < 0 then
-				dx = math.ceil(dx)
-			else
-				dx = math.floor(dx)
-			end
-			if dy < 0 then
-				dy = math.ceil(dy)
-			else
-				dy = math.floor(dy)
-			end
+			
+			dx = math.floor(dx + 0.5)
+			dy = math.floor(dy + 0.5)
+			
 			players[1].invincibility_frames_timer = 10
-			players[1]:perform_teleport(dx, dy)
+			if players[1].overlay ~= nil and ((players[1].overlay.type.search_flags & MASK.MOUNT) ~= 0) then
+				players[1].overlay:perform_teleport(dx, dy)
+			else
+				players[1]:perform_teleport(dx, dy)
+			end
 		end
 	end
 	if red_active == true and frames % 12 == 0 then
@@ -603,17 +665,23 @@ set_callback(function ()
 	local crocs = get_entities_by(ENT_TYPE.MONS_CROCMAN, MASK.ANY, LAYER.BOTH)
 	for i = 1,#crocs do
 		if #players > 0 and get_entity(crocs[i]) ~= nil then
+			local p -- Player or their mount
 			get_entity(crocs[i]).teleport_cooldown = 10
+			if players[1].overlay ~= nil and ((players[1].overlay.type.search_flags & MASK.MOUNT) ~= 0) then
+				p = players[1].overlay
+			else
+				p = players[1]
+			end
 			if get_entity(crocs[i]).last_owner_uid == players[1].uid and get_entity(crocs[i]).health ~= 0 and players[1].holding_uid ~= crocs[i] then
 				local input = read_input(players[1].uid)
 				if test_flag(input, INPUT_FLAG.UP) == false and test_flag(input, INPUT_FLAG.DOWN) == true then
-					players[1]:perform_teleport(0, -math.random(4,8))
+					p:perform_teleport(0, -math.random(4,8))
 				elseif test_flag(input, INPUT_FLAG.UP) == true and test_flag(input, INPUT_FLAG.DOWN) == false then
-					players[1]:perform_teleport(0, math.random(4,8))
+					p:perform_teleport(0, math.random(4,8))
 				elseif test_flag(players[1].flags, 17) then
-					players[1]:perform_teleport(-math.random(4,8), 0)
+					p:perform_teleport(-math.random(4,8), 0)
 				else
-					players[1]:perform_teleport(math.random(4,8), 0)
+					p:perform_teleport(math.random(4,8), 0)
 				end
 				get_entity(crocs[i]).last_owner_uid = -1
 			end
@@ -770,6 +838,7 @@ set_callback(function ()
 		shield_bash_cooldown = shield_bash_cooldown - 1
 	end
 end, ON.FRAME)
+
 set_callback(function()
     if not players[1] then return end
 	local metal_shields = get_entities_by(ENT_TYPE.ITEM_METAL_SHIELD, MASK.ANY, LAYER.BOTH)
